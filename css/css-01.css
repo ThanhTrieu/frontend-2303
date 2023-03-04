@@ -1,0 +1,20 @@
+/* selector co ban */
+/* #title{
+    color: blue;
+} */
+h1.title.title-2 {
+    color: red;
+}
+.title {
+    color: yellow;
+}
+/* attribute seclector */
+input[class*='ext'] {
+    border: 3px solid red;
+}
+a[href$='rg'] {
+    color: orange;
+}
+a[href^='https'] {
+    color: pink;
+}
