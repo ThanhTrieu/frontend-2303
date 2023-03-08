@@ -1,0 +1,87 @@
+html {
+    font-size: 62.5%;
+    /* 10px = 1rem */
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div.box > h1.title {
+    color: red;
+}
+header.header > h1.title ~ h2.content, p.text {
+    color: blue;
+}
+
+div.wraper header.header + nav.nav > ul.menu li.item a.link {
+    color: violet;
+}
+
+section.content :first-child {
+    color: red;
+}
+section.content :first-of-type {
+    color: rgb(10, 30, 40);
+}
+section.content :last-child {
+    color: yellow;
+}
+section.content :last-of-type {
+    color: green;
+}
+section.content :nth-child(4) {
+    color: pink;
+}
+section.content :nth-of-type(4) {
+    color: blueviolet;
+}
+section.content :nth-last-child(2) {
+    color: brown;
+}
+section.content :nth-last-of-type(2) {
+    color: orange;
+}
+ul.nav li:last-child {
+    color: blue;
+}
+div.parent :only-child {
+    color: red;
+}
+input[type='email']:focus {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    border: 1px solid red;
+}
+input[type='checkbox']:checked {
+    width: 200px;
+    height: 200px;
+}
+a.link:active {
+    color: yellow;
+}
+a.link:visited {
+    color: green;
+}
+a.link:link {
+    color: orange;
+}
+ul.nav li:hover {
+    color: red;
+}
+p.text-title::first-letter {
+    color: blue;
+    font-size: 50px;
+}
+p.text-title::first-line {
+    color: red;
+}
+p.text-title::before {
+    content: 'T3H';
+}
+p.text-title::after {
+    content: url('../images/icon16.png');
+}
+p.text-title::selection{
+    color: yellow;
+}

@@ -18,3 +18,6 @@ a[href$='rg'] {
 a[href^='https'] {
     color: pink;
 }
+p[class|='text'] {
+    color: yellow;
+}
