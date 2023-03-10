@@ -1,0 +1,67 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root{
+    /* tuong duong nhu the html */
+    --my-color: red;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+.box-1 {
+    /* goi bien da khai bao ra su dung */
+    border: 1px solid var(--my-color);
+}
+.box-2 {
+    border: 1px solid blue;
+    /* padding-top: 30px; */
+}
+p.content {
+    /* padding-top: 20px;
+    padding-left: 20px; */
+    border: 1px dotted black;
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    padding: 20px 0px 0px 0px;
+}
+div.content {
+    width: 800px;
+    height: 400px;
+    border: thin dotted red;
+}
+.child {
+    width: 200px;
+    height: 200px;
+}
+.child-1{
+    background-color: violet;
+    float: right;
+}
+.child-2{
+    background-color: pink;
+    float: right;
+}
+.child-3{
+    background-color: brown;
+}
+.clear{
+    clear: both;
+}
+.wraper {
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+    position: relative;
+}
+.icon {
+    position: absolute;
+    top: 0;
+    /* top: -100px;
+    left: 50px; */
+}
