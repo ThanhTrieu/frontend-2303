@@ -80,3 +80,114 @@ input, textarea, button {
     display: block;
     position: relative;
 }
+/* css feature */
+.feature__header {
+    background-color: var(--bg-light);
+    padding: 11.7rem 1.5rem 14.2rem;
+    text-align: center;
+}
+.feature__img--top {
+    margin: 0 auto 3.5rem;
+}
+.feature__heading{
+    margin-bottom: 3.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--title-color);
+    text-align: center;
+    letter-spacing: 0.2rem;
+    word-spacing: 1.2rem;
+    line-height: 1.6;
+}
+.feature__header--desc {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 108rem;
+}
+.feature__item {
+    display: flex;
+    flex-direction: row;
+    /* flex-flow: row wrap; */
+    flex-wrap: wrap;
+    height: 60rem;
+    overflow: hidden;
+}
+/* css col left */
+.feature__item--img {
+    width: 67%;
+    position: relative;
+}
+/* css col right */
+.feature__item--content {
+    width: 33%;
+}
+/* big image in col left */
+.feature__item--img .img_bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.feature__item--img .img_brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.feature__item--content-top {
+    background-color: var(--bg-white);
+    padding: 0 6.8rem;
+    height: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.feature__item--text {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 4rem;
+    position: relative;
+}
+.feature__item--text::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    background-color: #d7d7d7;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    /* tuong duong right: 50% */
+    transform: translateX(-50%); 
+}
+/* arrow css */
+.feature__item--content-top::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bg-white);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    z-index: 10;
+}
+/* doi vi tri 2 cot trong li thu 2 */
+.feature__item:nth-child(2) .feature__item--img {
+    order: 2;
+}
+/* xu ly cho li cuoi cung */
+.feature__item:last-child > .feature__item--img {
+    width: 33%;
+}
+.feature__item:last-child > .feature__item--content {
+    width: 34%;
+}
+.feature__item:last-child .feature__item--content-bottom {
+    width: 100%;
+}
