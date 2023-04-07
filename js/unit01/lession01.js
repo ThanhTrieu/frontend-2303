@@ -52,3 +52,56 @@ while(j <= 20){
     j++;
 }
 
+//
+let u = 10;
+let v = 9;
+let res = (u++) + (--v) + (u--) - (v++) + (++u) + (v--);
+//         10   +   8   +  11   -   8   +   11  +  9
+
+let x1 = 20;
+let x2 = 30;
+let res2 = (--x2) - (--x1) + (x2++) - (x1++) - (x2--) + (++x1);
+//           29   -   19   +   29   -   19   -   30   +  21
+//
+let month = 5;
+switch(month) {
+    case 1:
+        // do something
+        break;
+    case 2:
+        break;
+    default:
+        //
+        break;
+}
+if(month === 5){
+    // do something
+} else if (month === 5){
+        //
+} else {
+    // tuong duong default cua switch ... case
+}
+
+// cho biet tu 1- 100 co bao nhieu so chia het cho 5
+let count = 0;
+for(let i = 1; i <= 100 ; i++){
+    if(i % 5 === 0){
+        count++;
+    }
+}
+let count2 = 0;
+let n = 1;
+while ( n <= 100) {
+    if(n % 5 === 0){
+        count2++;
+    }
+    n++;
+}
+let count3 = 0;
+let  m = 1;
+do {
+    if(m % 5 === 0){
+        count3++;
+    }
+    m++;
+} while( m <= 100);
