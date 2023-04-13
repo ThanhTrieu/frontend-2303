@@ -71,3 +71,44 @@ let myFn = (arr) => {
     return newArr2;
 }
 console.log(myFn(numbers4));
+//////////////////////////////////////////////////////////////////////////////////
+const myArr = [1,2,3,4,5];
+const myArr2 = [...myArr,6,7,8,9]; //Spread operator
+console.log(myArr2); 
+
+function testDemo(...a) {
+    // ...a - rest params
+    console.log(a); // array
+}
+testDemo(1,2,3,'apple', 'lemon');
+// myArr2 [1,2,3,4,5,6,7,8,9];
+const findEl = myArr2.includes(6);
+console.log(findEl);
+
+const childArr = myArr2.slice(2,6);
+//console.log(childArr, myArr2);
+
+const newTest = [1,2,3,4,5,6];
+const childArr2 = newTest.splice(2,3,100,200);
+console.log(childArr2, newTest);
+
+const newTest2 = [1,2,3,4,5,6];
+// viet ham tinh tong cac so chan
+const myFn2 = (arr) => {
+    // [2,4,6];
+    //return arr.filter(item => item % 2 === 0)
+                //.reduce((next, current) => next + current);
+    let s = 0;
+    for(let i = 0; i< arr.length; i++) {
+        if(arr[i] % 2 === 0){
+            s += arr[i];
+        }
+    }
+    return s;
+}
+console.log(myFn2(newTest2));
+
+let t1, t2, t3, rest;
+[t1,t2,t3, ...rest] = [10,30,40,1,2,3,4,5];
+console.log(rest.reduce((i,j) => i+j));
+
