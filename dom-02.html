@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom - js</title>
+    <style>
+        .box {
+            width: 350px;
+            height: 350px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body onload="loadContent();">
+    <button onclick="myClick('your name');"> click me </button>
+    <br/>
+    <input onchange="getText(this);" />
+    <br/>
+    <input onkeydown="myKeyDown();" onkeypress="myKeyPress();" onkeyup="myKeyUp(this, event);" />
+    <br/>
+    <div
+        class="box"
+        onmousedown="mouseDown();"
+        onmouseup="mouseUp();"
+        onmousemove="mouseMove();"
+        onmouseover="mouseOver(this);"
+        onmouseout="mouseOut(this);"
+        onmouseleave="mouseLeave();"
+    >
+
+    </div>
+    <script>
+        function loadContent(){
+            console.log('load done');
+        }
+        function mouseLeave(){
+            console.log('mouseLeave');
+        }
+        function mouseOver(obj){
+            
+            obj.style.width = '500px';
+            obj.style.height = '500px';
+        }
+        function mouseOut(obj){
+            console.log('mouseOut');
+            obj.style.width = '350px';
+            obj.style.height = '350px';
+        }
+        function mouseMove(){
+            console.log('con chuot dang di chuyen');
+        }
+        function mouseDown(){
+            console.log('ban vua nhan xuong con chuot');
+        }
+        function mouseUp(){
+            console.log('ban vua nha tay khoi con chuot vua bam');
+        }
+        function myKeyDown(){
+            console.log('ban vua nhan ban phim');
+        }
+        function myKeyPress(){
+            console.log('ban dang giu phim');
+        }
+        function myKeyUp(obj, e){
+            console.log(`ban vua go ${e.key} tren ban phim`);
+            //console.log('ban da bo tay khoi phim');
+            console.log(obj.value.trim());
+        }
+        // const myClick = function(){
+        //     alert('hi');
+        // }
+        function myClick(name){
+            alert(`Hi ${name}`);
+        }
+        function getText(obj){
+            //console.log(obj);
+            let data = obj.value.trim();
+            console.log(data.length);
+        }
+    </script>
+</body>
+</html>

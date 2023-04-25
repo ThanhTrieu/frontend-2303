@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <button id="btnClick"> click me</button>
+    <h1 class="title"> Dang hoc JS </h1>
+    <input type="text" value=" button" />
+    <br/>
+    <img class="img" src="images/img-1.png" />
+
+    <script>
+        const btn = document.getElementById('btnClick');
+        // gan su kien
+        // btn.onclick = function(){
+        //     alert('hi');
+        // }
+        btn.addEventListener('click', function(){
+            //alert('hi');
+            const title = document.getElementsByClassName('title');
+            title[0].innerHTML = 'Hoc xong JS roi';
+            //console.log(title[0].innerHTML);
+            title[0].style.color = 'red';
+            title[0].style.marginTop = '50px';
+
+            const input = document.getElementsByTagName('input');
+            // thay doi thuoc tinh - gia tri cua thuoc tinh
+            //input[0].setAttribute('type','button');
+            input[0].type = 'button';
+        });
+    </script>
+</body>
+</html>

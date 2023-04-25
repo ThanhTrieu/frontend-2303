@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        .login {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .frm-login {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            width: 100%;
+            padding: 15px 0px;
+        }
+        .form-control {
+            width: 100%;
+            height: 28px;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .btn {
+            padding: 8px 12px;
+        }
+        .form-error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <form id="frm-login" class="frm-login" action="" method="get">
+            <div class="form-group">
+                <label for="username"> Username</label>
+                <input id="username" type="text" class="form-control" />
+                <p id="errorUsername" style="display: none;" class="form-error"></p>
+            </div>
+            <div class="form-group">
+                <label for="password"> Password</label>
+                <input type="password" class="form-control" id="password" />
+                <p id="errorPassword" style="display: none;" class="form-error"></p>
+            </div>
+            <button class="btn btn-login" type="submit" name="btnLogin">
+                Login
+            </button>
+        </form>
+    </div>
+    <script>
+        // bat su kien khi nguoi dung bam submit
+        const formLogin = document.getElementById('frm-login');
+
+        formLogin.addEventListener('submit', function(event){
+            event.preventDefault();
+            // lay gia tri cua username va password
+            const inputUsername = document.getElementById('username');
+            const inputPassword =  document.getElementById('password');
+            const errUser = document.getElementById('errorUsername');
+            const errPassword = document.getElementById('errorPassword');
+
+            let username = inputUsername.value.trim();
+            let password = inputPassword.value.trim();
+            let chkUser = null;
+            let chkPass = null;
+
+            if(!checkInputData(username)){
+                chkUser = showError(errUser, 'vui long nhap username', true);
+            } else {
+                chkUser = showError(errUser, '', false);
+            }
+
+            if(!checkInputData(password)){
+                chkPass = showError(errPassword, 'vui long nhap password', true);
+            } else {
+                chkPass = showError(errPassword, '', false);
+            }
+
+            if(!chkUser && !chkPass){
+                // thuc hien login
+                // formLogin.submit();
+                // gui du lieu di - call ajax
+            }
+            return false;
+        });
+
+
+        function checkInputData(data, type = 0){
+            return data.length > 0 ;
+        }
+
+        function showError(element, message, type = false){
+            element.innerHTML = message;
+            if(type){
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+            return type;
+        }
+        
+    </script>
+</body>
+</html>

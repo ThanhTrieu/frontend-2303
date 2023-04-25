@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - JS</title>
+    <style>
+        .text {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="text title"> Title </h1>
+    <h1 id="text" class="title text"> Title 2 </h1>
+    <button class="btn" id="btnClick"> click me</button>
+    <br/>
+    <input name="username" />
+
+    <script type="text/javascript">
+        // code js in herer
+        // 1- Dom Elements
+
+        const querySelector = document.querySelector('.text');
+        const queryAll = document.querySelectorAll('.text');
+        console.log(queryAll[1]);
+
+        const nameEl = document.getElementsByName('username');
+        console.log(nameEl[0]);
+
+        const title = document.getElementById('title');
+        console.log(title);
+
+        const title2 = document.getElementsByClassName('title');
+        console.log(title2[1]);
+
+        const btn = document.getElementsByTagName('button');
+        console.log(btn[0]);
+
+
+    </script>
+</body>
+</html>
