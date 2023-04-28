@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JS</title>
+</head>
+<body>
+    <div class="content">
+        <div class="group">
+            <label for="hsa"> HSA</label>
+            <input type="text" id="hsa" />
+            <p id="errHsa" style="display: none;"></p>
+        </div>
+        <div class="group">
+            <label for="hsb"> HSB</label>
+            <input type="text" id="hsb" />
+            <p id="errHsb" style="display: none;"></p>
+        </div>
+        <button type="button" id="btnSubmit"> Giai PT</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const btnSubmit = document.getElementById('btnSubmit');
+        btnSubmit.addEventListener('click', function(){
+            // moi logic cua bai toan xu ly o day
+            const inputHsa = document.getElementById('hsa');
+            const inputHsb = document.getElementById('hsb');
+            const errHsa = document.getElementById('errHsa');
+            const errHsb = document.getElementById('errHsb');
+            const result = document.getElementById('result');
+
+            let valHsa = inputHsa.value.trim();
+            let valHsb = inputHsb.value.trim();
+            let chkHsa = null;
+            let chkHsb = null;
+
+            if(!isNaN(valHsa) && valHsa.length > 0){
+                // thuc su la number string
+                if(valHsa === '0'){
+                    // sai
+                    chkHsa = false;
+                    errHsa.innerHTML = 'He so A phai khac 0';
+                    errHsa.style.color = 'red';
+                    errHsa.style.display = 'block';
+                    inputHsa.style.border = '1px solid red';
+                } else {
+                    // ok
+                    chkHsa = true;
+                    errHsa.innerHTML = '';
+                    errHsa.style.display = 'none';
+                    inputHsa.style.border = '';
+                }
+            } else {
+                // khong phai la so
+                chkHsa = false;
+                errHsa.innerHTML = 'vui long nhap so';
+                errHsa.style.color = 'red';
+                errHsa.style.display = 'block';
+                inputHsa.style.border = '1px solid red';
+            }
+
+            // check he so b
+            if(!isNaN(valHsb) && valHsb.length > 0){
+                chkHsb = true;
+                errHsb.innerHTML = '';
+                errHsb.style.display = 'none';
+                inputHsb.style.border = '';
+            } else {
+                chkHsb = false;
+                errHsb.innerHTML = 'Vui long nhap so';
+                errHsb.style.color = 'red';
+                errHsb.style.display = 'block';
+                inputHsb.style.border = '1px solid red';
+            }
+
+            // giai phuong trinh
+            if(chkHsa && chkHsb){
+                // ban chat valHsa va valHsb no la string
+                // kieu du lieu la string
+
+                valHsa = parseFloat(valHsa);
+                valHsb = parseFloat(valHsb);
+                //console.log(typeof valHsa);
+                //console.log(typeof valHsb);
+                result.innerHTML = `Phuong trinh co nghiem ${-valHsb/valHsa}`;
+
+            } else {
+                result.innerHTML = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <div class="content">
+        <h2> Kiem tra so nguyen to</h2>
+        <label for="txtNumber">moi nhap so</label>
+        <input type="text" id="txtNumber" />
+        <p id="err"></p>
+        <button type="button"> Kiem tra</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementsByTagName('button')[0].addEventListener('click', function(){
+            const inputNumber = document.getElementById('txtNumber');
+            const error  = document.getElementById('err');
+            const result = document.getElementById('result');
+
+            let valNumber = inputNumber.value.trim();
+            if(!isNaN(valNumber) && valNumber.length > 0){
+                // nhap so
+                error.innerHTML = '';
+                inputNumber.style.border = '';
+                valNumber = parseFloat(valNumber);
+                if(kiemTraSNT(valNumber)){
+                    result.innerHTML = 'So nguyen to';
+                } else {
+                    result.innerHTML = 'khong phai so nguyen to'
+                }
+            } else {
+                // ko phai so
+                result.innerHTML = '';
+                error.innerHTML = 'Vui long nhap so';
+                inputNumber.style.border = '1px solid red';
+            }
+        });
+
+        function kiemTraSNT(n){
+            if( n <= 1){
+                return false;
+            }
+            if(n === 2){
+                return true;
+            }
+            for(let i = 2; i<= Math.sqrt(n); i++){
+                if(n % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
